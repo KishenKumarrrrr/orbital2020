@@ -1,0 +1,25 @@
+.introbanner {
+    background: #192231;
+    margin: 0;
+    padding: 4%;
+}
+
+.title {
+    color: white;
+    margin: 0;
+    padding-left: 3%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 70px;
+}
+
+.subtext {
+    color: white;
+    margin: 0;
+    padding-top: 1%; 
+    padding-bottom: 1%;   
+    padding-left: 3%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+}
+
+
