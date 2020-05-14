@@ -1,0 +1,35 @@
+body {
+    background-color: white ;
+}
+
+.containter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.maingrid {
+    background: #192231;
+    height: 22rem;
+    width: 100%;
+}
+
+.names {
+    color: white;
+    font-family: 'Raleway', sans-serif;;
+}
+
+.tb {
+    float: left;
+    margin-left: 25%;
+    margin-top: 2%;
+}
+
+.displaypics {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+
