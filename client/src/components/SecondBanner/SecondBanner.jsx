@@ -1,7 +1,12 @@
 import React from 'react';
 import {Grid, Typography, Fab} from '@material-ui/core';
 import {Chart} from '../';
+<<<<<<< HEAD
 import ItemModal from '../itemModal';
+=======
+import {Link} from "react-router-dom";
+
+>>>>>>> origin/master
 import styles from './SecondBanner.module.css';
 
 //padding: "18px 36px",

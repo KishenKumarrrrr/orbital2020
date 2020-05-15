@@ -1,0 +1,35 @@
+.main {
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+}
+
+.title {
+    margin-top: 5%;
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    height: 50%;
+}
+
+.button_wrap {
+    margin-top: 300px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.button_wrap_answer {
+    margin-top: 300px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.buttona {
+    margin-left: 10px;
+    margin-right: 10px;
+}

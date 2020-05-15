@@ -1,0 +1,14 @@
+.buffer {
+    height: 1rem;
+    background-color: #192231;
+}
+
+.main {
+    background-color: #ECECEC;
+    position: absolute;
+    height: 90.5%;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}

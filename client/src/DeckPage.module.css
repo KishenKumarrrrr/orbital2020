@@ -1,0 +1,34 @@
+.main {
+    background-color: #ECECEC;
+}
+
+
+.buffer {
+    height: 1rem;
+    background-color: #192231;
+}
+
+.buffer2 {
+    height: 2rem;
+    background-color:#ECECEC;
+}
+
+.create {
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.otherdecks {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.wrapper {
+    margin-left: 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+}
