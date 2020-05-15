@@ -12,16 +12,39 @@ body {
     background: #192231;
     height: 22rem;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottomgrid {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .names {
     color: white;
-    font-family: 'Raleway', sans-serif;;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 2%;
 }
 
 .tb {
-    float: left;
-    margin-left: 25%;
+    width: 50%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.tb1 {
+    width: 40%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.tb2 {
+    width: 50%;
+    text-align: center;
     margin-top: 2%;
 }
 
@@ -29,7 +52,17 @@ body {
     border-radius: 50%;
     height: 200px;
     width: 200px;
-    margin: 0 auto;
+}
+
+.logo {
+    width: 30%;
+    height: 30%;
+}
+
+.logotext {
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+    font-size: 2rem;
 }
 
 

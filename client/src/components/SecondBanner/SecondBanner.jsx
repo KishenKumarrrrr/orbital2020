@@ -1,6 +1,7 @@
 import React from 'react';
 import {Grid, Typography, Fab} from '@material-ui/core';
 import {Chart} from '../';
+import {Link} from "react-router-dom";
 
 import styles from './SecondBanner.module.css';
 
@@ -31,7 +32,9 @@ const SecondBanner = () => {
                         size="medium"
                         className={styles.letsgo}
                     >
-                        Let's Get Started!
+                    <Link to="/decks" className = {styles.link}>
+                    Let's Get Started!
+                    </Link> 
                     </Fab>
                  </Typography>     
                  </div>
