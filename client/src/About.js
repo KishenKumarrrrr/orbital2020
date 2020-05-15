@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-import {Grid} from '@material-ui/core';
+import React from 'react';
 
-import { Header, IntroBanner, SecondBanner} from './components';
+import { Header } from './components';
 import styles from './About.module.css';
-import firstdp from './JonesDP.jpg';
-import seconddp from './KishenDP.jpg';
-import logo from './rocket.png';
+import firstdp from './images/JonesDP.jpg';
+import seconddp from './images/KishenDP.jpg';
+import logo from './images/rocket.png';
 
 const About = () => {
     return (

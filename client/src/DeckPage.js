@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Header, CreateDeck, StudyDeck } from './components';
 import styles from './DeckPage.module.css';
 
