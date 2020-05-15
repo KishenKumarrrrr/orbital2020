@@ -1,9 +1,11 @@
 import React from 'react';
 import {Grid, Typography, Fab} from '@material-ui/core';
 import {Chart} from '../';
-
+import ItemModal from '../itemModal';
 import styles from './SecondBanner.module.css';
 
+//padding: "18px 36px",
+//padding: "5px 50px",
 const SecondBanner = () => {
     return (
         <div className = {styles.container}>
@@ -19,20 +21,7 @@ const SecondBanner = () => {
                      <p className = {styles.para}>By combining spaced repetition with our analytics tools, 
                          we are able to optimize your study process and provide you with insights like never before.
                      </p>
-                     <Fab
-                     style={{
-                        borderRadius: 35,
-                        backgroundColor: "#192231",
-                        padding: "18px 36px",
-                        fontSize: "18px",
-                        color: '#FFFFFF',
-                        }}
-                        variant="extended"
-                        size="medium"
-                        className={styles.letsgo}
-                    >
-                        Let's Get Started!
-                    </Fab>
+                     <ItemModal/>
                  </Typography>     
                  </div>
              </Grid>
