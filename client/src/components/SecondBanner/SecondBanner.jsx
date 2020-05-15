@@ -21,7 +21,22 @@ const SecondBanner = () => {
                      <p className = {styles.para}>By combining spaced repetition with our analytics tools, 
                          we are able to optimize your study process and provide you with insights like never before.
                      </p>
-                     <ItemModal/>
+                     <Fab
+                     style={{
+                        borderRadius: 35,
+                        backgroundColor: "#192231",
+                        padding: "18px 36px",
+                        fontSize: "18px",
+                        color: '#FFFFFF',
+                        }}
+                        variant="extended"
+                        size="medium"
+                        className={styles.letsgo}
+                    >
+                    <Link to="/decks" className = {styles.link}>
+                    Let's Get Started!
+                    </Link> 
+                    </Fab>
                  </Typography>     
                  </div>
              </Grid>
