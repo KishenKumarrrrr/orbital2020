@@ -16,3 +16,12 @@
     font-size: 25px;
     color:#192231;
 }
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #D4AF37;
+}
