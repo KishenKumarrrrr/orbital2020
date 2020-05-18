@@ -9,7 +9,7 @@ import { Fab } from '@material-ui/core';
 import { Link } from "react-router-dom";
 
 
-const fakeData = [{ q: "Is this a question?", a: "first", last: false }, { q: "Is this STILL a question?", a: "second", last: false }, { q: "What about now?", a: "third", last: false }];
+const fakeData = [{ q: "True or False, For every vertex, the minimum outgoing edge is always part of the MST.", a: "True", last: false }, { q: "What is the running time of the Floyd-Warshall algorithm?", a: "O(V^3)", last: false }, { q: "What is the Time complexity of growing a hash table?", a: "O(m1 + m2 + n)", last: false }];
 fakeData.push({ q: "Congratulations! You're done with the deck!", a: "", last: true });
 
 //Card Style
