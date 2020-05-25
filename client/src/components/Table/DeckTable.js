@@ -54,18 +54,17 @@ export default function DeckTable(props) {
   {props.data.map(obj => initRows.push(createData(obj.name, obj.cards.length, <ButtonGroup color="primary" aria-label="outlined primary button group">
                                                                                 <Button>Study</Button>
                                                                                 <Button>Edit</Button>
-                                                                                <Button onClick={() => delDeck(obj.name)}>Delete</Button>
+                                                                                <Button onClick={() => props.del(obj.name)}>Delete</Button>
                                                                             </ButtonGroup>)))
   };
   
   const [rows, setRows] = React.useState(initRows);
 
-  React.useEffect(() => console.log('value changed!'), [props.data]);
+  React.useEffect(() => {
+    setRows(initRows);
+  }, [props.data]);
 
-  const delDeck = (name) => {
-    let newRow = rows.filter(row => row.deck !== name);
-    setRows(newRow);
-  }
+
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -99,7 +98,7 @@ export default function DeckTable(props) {
           <TableBody>
             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
               return (
-                <TableRow hover role="checkbox" tabIndex={-1} >
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
                   {columns.map((column) => {
                     const value = row[column.id];
                     return (

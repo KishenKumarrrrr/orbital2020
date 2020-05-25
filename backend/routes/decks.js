@@ -16,4 +16,13 @@ router.route('/add').post((req,res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+
+router.route('/del').post((req,res) => {
+    const delName = req.body.name;
+
+    Deck.deleteOne({name: delName})
+        .then(() => res.json('Deck deleted!'))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router;

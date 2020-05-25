@@ -53,8 +53,20 @@ const DeckPage = () => {
             .catch(function (error) {
                 console.log(error);
             });
-
+        setDecks([...decks,{name: state, cards: []}]);
     }
+
+    const delDeck = (delname) => {
+        axios.post('http://localhost:5000/decks/del', {name: delname})
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        const newDecks = decks.filter(deck => deck.name != delname);
+        setDecks([...newDecks]);
+    };
         
     return (
         <div className = {styles.main}>
@@ -73,7 +85,7 @@ const DeckPage = () => {
                 </form>
                 </div>
                 <div className = {styles.containTable}>
-                    <DeckTable data = {decks}/>
+                    <DeckTable data = {decks} del = {delDeck}/>
                 </div>
             </div>
         </div>
