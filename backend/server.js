@@ -19,8 +19,10 @@ connection.once('open', () => {
 })
 
 const deckRouter = require('./routes/decks');
+const cardRouter = require('./routes/cards');
 
 app.use('/decks', deckRouter);
+app.use('/cards', cardRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}!`);

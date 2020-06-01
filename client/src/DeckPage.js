@@ -16,10 +16,9 @@ async function getDecks() {
     let data = res.data;
     initDecks = data;
     console.log("Successfully retrieved Decks");
-    
 }  
 
-getDecks()
+getDecks();
 
 
 const useStyles = makeStyles((theme) => ({
@@ -45,6 +44,7 @@ const DeckPage = () => {
     
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log(event);
         axios.post('http://localhost:5000/decks/add', {name: state})
             .then(function (response) {
                 console.log(response);
@@ -54,6 +54,8 @@ const DeckPage = () => {
                 console.log(error);
             });
         setDecks([...decks,{name: state, cards: []}]);
+        setState('');
+       
     }
 
     const delDeck = (delname) => {
@@ -76,7 +78,7 @@ const DeckPage = () => {
             <div className = {styles.display} >
                 <div className = {styles.containCreate}>
                 <form className={classes.root} noValidate autoComplete="off" onSubmit={(event) => handleSubmit(event)}>
-                    <TextField onChange={handleChange} id="outlined-basic" label="Deck Name" variant="outlined" />
+                    <TextField onChange={handleChange} id="outlined-basic" label="Deck Name" variant="outlined" value = {state} />
                     <div>
                         <Button variant="contained" size="large" type = "submit">
                                 Add Deck

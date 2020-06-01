@@ -12,11 +12,11 @@ import {Link} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import axios from 'axios';
-import styles from './DeckTable.module.css';
+import styles from './CardTable.module.css';
 
 const columns = [
-  { id: 'deck', label: 'Deck', minWidth: 170 },
-  { id: 'cards', label: 'Cards', minWidth: 100 },
+  { id: 'ques', label: 'Question', minWidth: 170 },
+  { id: 'ans', label: 'Answer', minWidth: 100 },
   {
     id: 'actions',
     label: 'Actions',
@@ -25,8 +25,8 @@ const columns = [
   },
 ];
 
-function createData(deck, cards, actions) {
-  return {deck, cards, actions};
+function createData(ques, ans, actions) {
+  return {ques, ans, actions};
 }
 
 
@@ -39,26 +39,24 @@ const useStyles = makeStyles({
   },
 });
 
-  
 
-
-
-
-
-
-
-
-export default function DeckTable(props) {
+export default function CardTable(props) {
   const classes = useStyles();
 
+
   let initRows = [];
-  {props.data.map(obj => initRows.push(createData(obj.name, obj.cards.length, <ButtonGroup color="primary" aria-label="outlined primary button group">
-                                                                               <Button> <Link to={"/study/" + obj.name}  color="primary" className = {styles.study}>Study</Link></Button>
-                                                                                <Button><Link to={"/" + obj.name + "/cards"}  color="primary" className = {styles.study}>Edit</Link></Button>
-                                                                                <Button onClick={() => props.del(obj.name)}>Delete</Button>
-                                                                            </ButtonGroup>)))
-  };
-  
+  if (props.data.length > 0) {
+    const deck = props.data[0];
+    {deck.cards.map(obj => initRows.push(createData(obj.question, obj.answer, <ButtonGroup color="primary" aria-label="outlined primary button group">
+    <Button><Link to={"/" + obj.name + "/cards"}  color="primary" className = {styles.study}>Edit</Link></Button>
+    <Button onClick={() => props.del(obj.name)}>Delete</Button>
+    </ButtonGroup>)))
+    };
+  }
+
+
+
+
   const [rows, setRows] = React.useState(initRows);
 
   React.useEffect(() => {
