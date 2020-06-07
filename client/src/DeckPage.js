@@ -1,25 +1,94 @@
-import React from 'react';
-import { Header, CreateDeck, StudyDeck } from './components';
+import React, {useState} from 'react';
+import { Header, StudyDeck, DeckTable } from './components';
+import Button from '@material-ui/core/Button';
 import styles from './DeckPage.module.css';
+import axios from 'axios';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+import { FormHelperText } from '@material-ui/core';
 
-const fakeArray = ['CS2040S', 'CS2030', 'MA1101R', 'IS1103', 'GER1000'];
+
+
+let initDecks = [];
+
+async function getDecks() {
+    let res = await axios.get("http://localhost:5000/decks");
+    let data = res.data;
+    initDecks = data;
+    console.log("Successfully retrieved Decks");
+}  
+
+getDecks();
+
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      '& > *': {
+        margin: theme.spacing(1),
+        width: '25ch',
+      },
+    },
+  }));
+  
 
 const DeckPage = () => {
+
+    const classes = useStyles();
+
+    const [state, setState] = React.useState('');
+    const [decks, setDecks] = React.useState(initDecks);
+
+    const handleChange = (event) => {
+        setState(event.target.value);
+    }
+    
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(event);
+        axios.post('http://localhost:5000/decks/add', {name: state})
+            .then(function (response) {
+                console.log(response);
+                getDecks();
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        setDecks([...decks,{name: state, cards: []}]);
+        setState('');
+       
+    }
+
+    const delDeck = (delname) => {
+        axios.post('http://localhost:5000/decks/del', {name: delname})
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        const newDecks = decks.filter(deck => deck.name != delname);
+        setDecks([...newDecks]);
+    };
+        
     return (
         <div className = {styles.main}>
             <Header />
             <div className = {styles.buffer}>
             </div>
-            <div className = {styles.create}>
-            <CreateDeck />
-            </div>
-            <div>
-                <h1 className = {styles.otherdecks}>Study a deck!</h1>
-            </div>
-            <div className = {styles.wrapper}>
-                {fakeArray.map(name => <StudyDeck name = {name}/>)}
-            </div>
-            <div className = {styles.buffer2}>
+            <div className = {styles.display} >
+                <div className = {styles.containCreate}>
+                <form className={classes.root} noValidate autoComplete="off" onSubmit={(event) => handleSubmit(event)}>
+                    <TextField onChange={handleChange} id="outlined-basic" label="Deck Name" variant="outlined" value = {state} />
+                    <div>
+                        <Button variant="contained" size="large" type = "submit">
+                                Add Deck
+                        </Button>
+                    </div>
+                </form>
+                </div>
+                <div className = {styles.containTable}>
+                    <DeckTable data = {decks} del = {delDeck}/>
+                </div>
             </div>
         </div>
 
