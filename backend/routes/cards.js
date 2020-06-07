@@ -22,11 +22,17 @@ router.route('/add').post((req,res) => {
 
 
 router.route('/del').post((req,res) => {
-    const delName = req.body.name;
+    const delQues = req.body.question;
+    const deckName =  req.body.name
 
-    Deck.deleteOne({name: delName})
-        .then(() => res.json('Deck deleted!'))
-        .catch(err => res.status(400).json('Error: ' + err));
+    Deck.updateOne(
+        {name: deckName},
+        {$pull : {
+                cards: {"question" : delQues}
+            }
+        }
+    ).then(() => res.json('Card deleted!'))
+    .catch(err => res.status(400).json('Error: ' + err));
 });
 
 module.exports = router;

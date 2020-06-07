@@ -49,7 +49,7 @@ export default function CardTable(props) {
     const deck = props.data[0];
     {deck.cards.map(obj => initRows.push(createData(obj.question, obj.answer, <ButtonGroup color="primary" aria-label="outlined primary button group">
     <Button><Link to={"/" + obj.name + "/cards"}  color="primary" className = {styles.study}>Edit</Link></Button>
-    <Button onClick={() => props.del(obj.name)}>Delete</Button>
+    <Button onClick={() => props.del(obj.question)}>Delete</Button>
     </ButtonGroup>)))
     };
   }

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
         margin: theme.spacing(1),
-        width: '25ch',
+        width: '40ch',
       },
     },
   }));
@@ -51,31 +51,33 @@ const CardPage = (props) => {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:5000/cards/add', {name: props.match.params.deckName, ques: question, ans: answer})
-            .then(function (response) {
-                console.log(response);
-                getCards();
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-        setDecks([{name: decks.name, 
-                    cards: [...decks.cards, {q: question, a: answer, last: false}]
-                }]);
+        // axios.post('http://localhost:5000/cards/add', {name: props.match.params.deckName, ques: question, ans: answer})
+        //     .then(function (response) {
+        //         console.log(response);
+        //         getCards();
+        //     })
+        //     .catch(function (error) {
+        //         console.log(error);
+        //     });
+        const updateDeck = decks[0];
+        updateDeck.cards = [...decks[0].cards, {question: question, answer: answer, last: false}];
+        setDecks([updateDeck]);
         setQuestion('');  
         setAnswer('');  
     }
 
     const delDeck = (delname) => {
-        // axios.post('http://localhost:5000/decks/del', {name: delname})
+        // axios.post('http://localhost:5000/decks/del', {name: props.match.params.deckName, question: delname})
         //     .then(function (response) {
         //         console.log(response);
         //     })
         //     .catch(function (error) {
         //         console.log(error);
         //     });
-        // const newDecks = decks.filter(deck => deck.name != delname);
-        // setDecks([...newDecks]);
+        const newDecks = decks.filter(deck => deck.name != delname);
+        const updateDeck = decks[0];
+        updateDeck.cards = decks[0].cards.filter(card => card.question != delname);
+        setDecks([updateDeck]);
     };
         
     return (
