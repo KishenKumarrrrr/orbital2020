@@ -6,6 +6,7 @@ import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import { FormHelperText } from '@material-ui/core';
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -35,8 +36,18 @@ const DeckPage = () => {
 
     const classes = useStyles();
 
+    setInterval(() => updateDeck(), 10000);
+
     const [state, setState] = React.useState('');
     const [decks, setDecks] = React.useState(initDecks);
+
+    const updateDeck = () => {
+        getDecks();
+    }
+
+    React.useEffect(() => {
+        setDecks(initDecks);
+      }, [initDecks]);
 
     const handleChange = (event) => {
         setState(event.target.value);
@@ -45,7 +56,8 @@ const DeckPage = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(event);
-        axios.post('http://localhost:5000/decks/add', {name: state})
+        const uuid = uuidv4();
+        axios.post('http://localhost:5000/decks/add', {name: state, id : uuid, cards: []})
             .then(function (response) {
                 console.log(response);
                 getDecks();
@@ -53,7 +65,7 @@ const DeckPage = () => {
             .catch(function (error) {
                 console.log(error);
             });
-        setDecks([...decks,{name: state, cards: []}]);
+        setDecks([...decks,{_id: uuid, name: state, cards: []}]);
         setState('');
        
     }
@@ -71,7 +83,7 @@ const DeckPage = () => {
     };
         
     return (
-        <div className = {styles.main}>
+        <div className = {styles.main}  onFocus = {() => console.log("focused")}>
             <Header />
             <div className = {styles.buffer}>
             </div>

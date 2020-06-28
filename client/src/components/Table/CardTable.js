@@ -43,12 +43,16 @@ const useStyles = makeStyles({
 export default function CardTable(props) {
   const classes = useStyles();
 
+  React.useEffect(() => {
+    setRows(initRows);
+  }, [props.data]);
 
   let initRows = [];
   if (props.data.length > 0) {
     const deck = props.data[0];
+    console.log(deck);
     {deck.cards.map(obj => initRows.push(createData(obj.question, obj.answer, <ButtonGroup color="primary" aria-label="outlined primary button group">
-    <Button><Link to={"/" + obj.name + "/cards"}  color="primary" className = {styles.study}>Edit</Link></Button>
+    <Button onClick = {() => props.transition(obj.question, obj.answer, obj._id)}>Edit</Button>
     <Button onClick={() => props.del(obj.question)}>Delete</Button>
     </ButtonGroup>)))
     };
@@ -56,14 +60,7 @@ export default function CardTable(props) {
 
 
 
-
   const [rows, setRows] = React.useState(initRows);
-
-  React.useEffect(() => {
-    setRows(initRows);
-  }, [props.data]);
-
-
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);

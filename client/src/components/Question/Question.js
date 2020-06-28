@@ -9,9 +9,6 @@ import { Fab } from '@material-ui/core';
 import { Link } from "react-router-dom";
 
 
-const fakeData = [{ q: "True or False, For every vertex, the minimum outgoing edge is always part of the MST.", a: "True", last: false }, { q: "What is the running time of the Floyd-Warshall algorithm?", a: "O(V^3)", last: false }, { q: "What is the Time complexity of growing a hash table?", a: "O(m1 + m2 + n)", last: false }];
-fakeData.push({ q: "Congratulations! You're done with the deck!", a: "", last: true });
-
 //Card Style
 const useStyles = makeStyles({
     root: {
@@ -21,8 +18,13 @@ const useStyles = makeStyles({
 });
 
 
-export default function Question() {
+export default function Question(props) {
     const classes = useStyles();
+
+    console.log(props.cards);
+    const buffer = [...props.cards];
+    buffer.push({ question: "Congratulations! You're done with the deck!", answer: "", last: true });
+    const [data, setData] = React.useState(buffer);
 
     const answerButton = () => {
         return (
@@ -100,12 +102,12 @@ export default function Question() {
     }
 
     const feedbackClicked = () => {
-        console.log(fakeData[state.count].last);
+        console.log(data[state.count].last);
         setState((state) => {
             return {
             count: state.count + 1,
             isQuestion: true,
-            buttonDisplay: fakeData[state.count + 1].last ? finalButton : answerButton
+            buttonDisplay: data[state.count + 1].last ? finalButton : answerButton
         };
     })
 }
@@ -115,7 +117,7 @@ return (
         <Card className={classes.root}>
             <div className={styles.test}>
                 <CardContent>
-                    <h1 className={styles.title}>{state.isQuestion ? fakeData[state.count].q : fakeData[state.count].a}</h1>
+                    <h1 className={styles.title}>{state.isQuestion ? data[state.count].question : data[state.count].answer}</h1>
                 </CardContent>
                 <CardActions>
                     {state.buttonDisplay()}

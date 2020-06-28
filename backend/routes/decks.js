@@ -9,7 +9,8 @@ router.route('/').get((req,res) => {
 
 router.route('/add').post((req,res) => {
     const name = req.body.name;
-    const newDeck = new Deck({name});
+    const uuid = req.body.id;
+    const newDeck = new Deck({name: name, _id : uuid});
 
     newDeck.save()
         .then(() => res.json('Deck added!'))
