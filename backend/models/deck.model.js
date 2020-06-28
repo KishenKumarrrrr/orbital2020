@@ -5,9 +5,10 @@ const Schema = mongoose.Schema;
 
 
 const deckSchema = new Schema({
+    _id : String,
     name : { type: String, required: true},
     cards : { type: [mongoose.Schema.Card]},
-})
+}, {_id : false});
 
 const Deck = mongoose.model('Deck', deckSchema);
 
