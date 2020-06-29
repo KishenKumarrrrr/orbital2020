@@ -44,3 +44,15 @@ Data visualisation tools that allow users to view their productivity and how wel
 2.	As a student who is revising for exams, I want to be able to quickly identify the areas that I am weak in so I can focus more on those topics.
 3.	As a student, I would like to review only the content that I have to and not waste unnecessary time reviewing content I already know well.
 4.	As a student, I would like to be able to know how productive I am in revising for an exam and how frequently I should be revising concepts with varying difficulties.
+
+## Hierarchy
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/hierarchy.jpeg?raw=true)
+
+
+## Wireframes
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/landing_wireframe.jpeg?raw=true)
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/all_decks_wireframe.jpeg?raw=true)
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/all_cards_wireframe.jpeg?raw=true)
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/card_wireframe.jpeg?raw=true)
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/answer_fireframe.jpeg?raw=true)
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/edit_qn_wireframe.jpeg?raw=true)
