@@ -1,6 +1,5 @@
 # orbital2020: STUDYSMART
-![alt text](https://sheltered-atoll-56102.herokuapp.com)
-
+### Prototype hosted: https://sheltered-atoll-56102.herokuapp.com)
 
 ### Proposed Level of Achievement: Gemini
 
