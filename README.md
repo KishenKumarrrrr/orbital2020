@@ -1,5 +1,7 @@
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/client/public/studysmart.ico)
 # orbital2020: STUDYSMART
-### Prototype hosted: https://sheltered-atoll-56102.herokuapp.com)
+
+### Prototype hosted: https://sheltered-atoll-56102.herokuapp.com
 
 ### Proposed Level of Achievement: Gemini
 
