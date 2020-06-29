@@ -15,10 +15,19 @@ Instead of going through entire chunks of content, wouldn’t it be nice to only
 
 ## Core features
 The Web Application will feature multiple decks of flashcards, stored in a database unique to our user. Users will be able to organise module content within a deck by constructing flash cards for that specific deck. 
-(pic1)
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/landing.jpeg?raw=true)
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/all_decks.jpeg?raw=true)
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/cards.jpeg?raw=true)
+
+There is also an option to edit the cards if needed.
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/edit_qn.jpeg?raw=true)
+
 Each time a flash card is reviewed, the user provides feedback on the difficulty of the review. Based on the difficulty, a next review data is tagged to the card and the card does not surface again until that date. 
-(pic2)
-Data visualisation tools that allow users to view their productivity and how well they are performing on certain decks or subgroups of cards within decks through an analysis page. Users will be able to track their daily progress as well.
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/card.png?raw=true)
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/answer.png?raw=true)
+
+
+Data visualisation tools that allow users to view their productivity and how well they are performing on certain decks or subgroups of cards within decks through an analysis page. Users will be able to track their daily progress as well.(not yet implemented)
 
 ## User Stories:
 
