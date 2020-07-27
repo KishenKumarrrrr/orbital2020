@@ -79,5 +79,5 @@ Each time a flash card is reviewed, the user provides feedback on the difficulty
 ![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/all_decks_wireframe.jpeg?raw=true)
 ![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/all_cards_wireframe.jpeg?raw=true)
 ![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/card_wireframe.jpeg?raw=true)
-![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/answer_fireframe.jpeg?raw=true)
+![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/answer_wireframe.jpeg?raw=true)
 ![alt text](https://github.com/KishenKumarrrrr/orbital2020/blob/master/edit_qn_wireframe.jpeg?raw=true)
