@@ -86,10 +86,14 @@ Each time a flash card is reviewed, the user provides feedback on the difficulty
 Problem (P) 
 Solution (S)
 
+# Problem 1
 P: State not being passed between card edit page and card page. Thus, the cards were not edited even though it was supposed to be.
+
 S: Completely revamped pages due to the cyclic dependency between the aforementioned pages. Redesigned pages to ensure that they have a proper parent-child relationship 
 
+# Problem 2
 P: Users could access the collaborative database of decks without proper authorization (ie; anyone using the site can edit the decks)
+
 S: Decided to add in user authorisation and added in permissions for each page such that users are forced to sign in to access the database
 
 ## Lessons Learnt
