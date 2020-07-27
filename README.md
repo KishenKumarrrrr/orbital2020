@@ -7,7 +7,7 @@
 
 ## Project Scope:
 
-A web application that provides students with the ability to create flashcards online and arrange them according to folders. Users will be able to have cards unique to their user IDs.
+A web application that provides students with the ability to create flashcards online and arrange them according to folders. Users will be able to access community made flashcards and collaborate with others to create effective cards for studying.
 
 ## Motivation
 Everyday, students are bombarded with large amounts of content, spanning multiple modules, that they have to internalise. While they are clear on what they have to know, it remains a challenge developing an efficient system that will help them internalise the content. 
@@ -31,7 +31,6 @@ The Web Application will feature multiple decks of flashcards, stored in a datab
 4)	Authentication
   a) Log in page
   b) Sign up page
-  c) Decks are unique to each user ID.
 
 
 ### Landing page (OLD)
